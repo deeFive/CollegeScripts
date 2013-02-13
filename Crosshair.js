@@ -1,3 +1,11 @@
+/* Make a crosshair texture in photoshop and remove the white backround making it transparent place the
+   crosshair script on the first person controller (Player) and drag your texture onto where it says texture
+   in the hierachy play the scene theres your cross hair ps you might want to press Escape key or 
+   (whatever that key is on a damn mac) to quit the scene from playing add my pause menu for wasy close and 
+   replay
+   
+   Script made by Robert Hubbard  Credits where ever if you wish
+*/
 var showGUI : boolean = false;
 var showpresse : boolean = false;
 var newSkin : GUISkin;

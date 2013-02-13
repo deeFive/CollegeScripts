@@ -28,7 +28,7 @@ var PaintingInfoImage : Texture2D;
 private var presse : boolean = false;
 private var turnofe : boolean = false;
 
-  turnofe = true;
+	turnofe = true;
 
 function OnTriggerEnter ()
 {
@@ -38,11 +38,6 @@ function OnTriggerEnter ()
 }
 
 
-function OnTriggerExit ()
-{
-	showpresse = false;
-}
-
 
 function Update()
 {
@@ -51,12 +46,19 @@ function Update()
 		{
 			showGUI  = true;
 		}
-	else
+	    else
 		if (Input.GetButtonDown ("Q"))
 		{
 			showGUI = false;	
 		}
 		}
+}
+
+function OnTriggerExit ()
+{
+	showpresse = false;
+	showGUI = false;
+	presse = false;
 }
 
 

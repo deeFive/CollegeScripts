@@ -1,0 +1,142 @@
+/******************************************************************************
+For this script to work Create the following tags in unity FlagA, FlagB, FlagC
+And add box colliders to the flags with the "isTrigger" ticked in the inspector
+
+
+******************************************************************************/
+using UnityEngine;
+using System.Collections;
+
+public class Flags : MonoBehaviour 
+{
+
+public GUISkin FLAGHUDGUISKIN;
+public static bool showflagmessage = false;
+public static bool flagcapturing = false;
+
+	void OnTriggerEnter (Collider other)
+	{
+    		if (other.gameObject.tag == "FlagA") 
+		{
+       			showflagmessage = true;
+			Debug.Log("Player Entered Flag A Capture Zone");
+    		}
+		if (other.gameObject.tag == "FlagB") 
+		{
+       			showflagmessage = true;
+			Debug.Log("Player Entered Flag B Capture Zone");
+    		}
+		if (other.gameObject.tag == "FlagC") 
+		{
+       			showflagmessage = true;
+			Debug.Log("Player Entered Flag C Capture Zone");
+    		}
+	}
+	
+	void OnTriggerStay (Collider other)
+	{
+    		if (other.gameObject.tag == "FlagA") 
+		{
+       			flagcapturing = true;
+			Debug.Log("Player Is Capturing Flag A");
+
+			/***************************************
+			CODE FOR FLAG A CAPTURE TO BE ADDED HERE
+			***************************************/
+
+    		}
+		if (other.gameObject.tag == "FlagB") 
+		{
+       			flagcapturing = true;
+			Debug.Log("Player Is Capturing Flag B");
+
+			/***************************************
+			CODE FOR FLAG B CAPTURE TO BE ADDED HERE
+			***************************************/
+
+    		}
+		if (other.gameObject.tag == "FlagC") 
+		{
+       			flagcapturing = true;
+			Debug.Log("Player Is Capturing Flag C");
+
+			/***************************************
+			CODE FOR FLAG C CAPTURE TO BE ADDED HERE
+			***************************************/
+
+    		}
+	}
+
+	void OnTriggerExit (Collider other)
+	{
+    		if (other.gameObject.tag == "FlagA") 
+		{
+       			showflagmessage = false;
+       			flagcapturing = false;
+			Debug.Log("Player Left Flag A Capture Zone");
+    		}
+		if (other.gameObject.tag == "FlagB") 
+		{
+       			(showflagmessage = false;
+       			flagcapturing = false;
+			Debug.Log("Player Left Flag B Capture Zone");
+    		}
+		if (other.gameObject.tag == "FlagC") 
+		{
+       			showflagmessage = false;
+       			flagcapturing = false;
+			Debug.Log("Player Left Flag C Capture Zone");
+    		}
+	}
+
+	if(showflagmessage == true)
+	{
+		Debug.Log("Let The Capturing Begin");
+
+		if(flagcapturing == true)
+		{
+			Debug.Log("The Capturing Has Begun");
+
+			if (other.gameObject.tag == "FlagA") 
+			{
+				GUI.Label(new Rect(10, 10, 200, 20), "Flag A is being captured");
+    			}
+
+			if (other.gameObject.tag == "FlagB") 
+			{
+				GUI.Label(new Rect(10, 10, 200, 20), "Flag B is being captured");
+    			}
+
+			if (other.gameObject.tag == "FlagC") 
+			{
+				GUI.Label(new Rect(10, 10, 200, 20), "Flag C is being captured");
+    			}
+		}
+	}
+
+	if(flagcapturing == false)
+	{
+		if (other.gameObject.tag == "FlagA") 
+		{
+			Debug.Log("Flag A is not being captured");
+    		}
+
+		if (other.gameObject.tag == "FlagB") 
+		{
+			Debug.Log("Flag B is not being captured");
+    		}
+
+		if (other.gameObject.tag == "FlagC") 
+		{
+			Debug.Log("Flag C is not being captured");
+    		}
+	}
+    	}
+
+	else if(showflagmessage == false)
+	{
+		//DOES NOTHING
+	}
+	
+}
+@script AddComponentMenu ("Domination/Flags/Flag Capturing")

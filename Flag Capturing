@@ -1,8 +1,8 @@
 /******************************************************************************
 For this script to work Create the following tags in unity FlagA, FlagB, FlagC
 And add box colliders to the flags with the "isTrigger" ticked in the inspector
-
-
+	
+			Code made by Robert Hubbard
 ******************************************************************************/
 using UnityEngine;
 using System.Collections;
